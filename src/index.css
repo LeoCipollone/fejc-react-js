@@ -1,4 +1,4 @@
-@import './styles/layout.css';
+@import "./styles/layout.css";
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   @apply flex;
   @apply flex-col;
   @apply h-full;
-  @apply items-stretch;
+  @apply items-center;
 
   @apply py-6;
   @apply px-4;
@@ -60,4 +60,87 @@
   @apply text-xs;
   @apply text-center;
   @apply text-comment;
+}
+.accordion__container {
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0px 100px 80px rgba(8, 35, 50, 0.07),
+    0px 41.7776px 33.4221px rgba(8, 35, 50, 0.0503198),
+    0px 22.3363px 17.869px rgba(8, 35, 50, 0.0417275),
+    0px 12.5216px 10.0172px rgba(8, 35, 50, 0.035),
+    0px 6.6501px 5.32008px rgba(8, 35, 50, 0.0282725),
+    0px 2.76726px 2.21381px rgba(8, 35, 50, 0.0196802);
+}
+.accordion__container-collapsed {
+  width: 95%;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.accordion__container-collapsed .accordion__arrow-icon {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.collapsed {
+  display: none;
+}
+.accordion__category-title-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+.accordion__icon-category {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.accordion__category-title-container h2 {
+  width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.accordion__arrow-icon {
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 22px;
+  object-fit: contain;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  cursor: pointer;
+}
+.accordion__cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.accordion__picture-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+  height: fit-content;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+.accordion__picture-card img {
+  height: 131px;
+  object-fit: cover;
+}
+.accordion__picture-card h3 {
+  font-size: 14px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f2adad;
+  margin-top: 10px;
 }
