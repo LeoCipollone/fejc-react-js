@@ -20,7 +20,7 @@ const getArtworkById = (id, size) => {
       id: data.id,
       title: data.title,
       artistTitle: data.artist_title,
-      imageUrl: `${config.iiif_url}/${data.image_id}/full/${size},/0/default.png`,
+      imageUrl: `${config.iiif_url}/${data.image_id}/full/${size},/0/default.jpg`,
       imageAltText: data.thumbnail.alt_text,
       categoryTitles: data.category_titles
     }));
