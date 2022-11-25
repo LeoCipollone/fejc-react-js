@@ -131,7 +131,11 @@
   padding: 10px;
   border-radius: 6px;
 }
-.accordion__picture-card img {
+.iconLink__container span {
+  display: flex;
+  justify-content: center;
+}
+.iconLink__container img {
   height: 131px;
   object-fit: cover;
 }

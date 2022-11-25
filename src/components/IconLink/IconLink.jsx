@@ -15,6 +15,11 @@ export const IconLink = ({
   to
 }) => {
   return (
-    <><Link to={to}>{label}</Link></>
+    <>
+      <Link className='iconLink__container' to={to}>
+        <span>{icon}</span>
+        <h3>{label}</h3>
+      </Link>
+    </>
   );
 };

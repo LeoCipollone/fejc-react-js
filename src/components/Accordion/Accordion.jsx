@@ -24,7 +24,6 @@ export const Accordion = ({
   children,
   className,
   handleChange,
-  pictureData,
   categories,
 }) => {
 

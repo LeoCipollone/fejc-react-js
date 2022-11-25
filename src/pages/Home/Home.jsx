@@ -1,5 +1,6 @@
 import { Accordion } from "../../components/Accordion/Accordion";
 import { useState, useEffect } from "react";
+import { IconLink } from "../../components/IconLink/IconLink";
 
 export const Home = () => {
   const [artworks, setArtworks] = useState([]);
@@ -72,24 +73,34 @@ export const Home = () => {
                     : "collapsed"
                 }
               >
-                {artworks.map((el, i) => {
-                  return el.category_titles.length > 1
-                    ? categories[index] === el.category_titles[1] && (
-                        <div key={i} className="accordion__picture-card">
-                          <img
-                            src={`https://www.artic.edu/iiif/2/${el.image_id}/full/200,/0/default.jpg`}
-                            alt={`${el.thumbnail.alt_text}`}
+                {artworks.map((picture) => {
+                  return picture.category_titles.length > 1
+                    ? categories[index] === picture.category_titles[1] && (
+                        <div key={picture.id} className="accordion__picture-card">
+                          <IconLink
+                            to={`paintings/${picture.id}`}
+                            label={picture.title}
+                            icon={
+                              <img
+                                src={`https://www.artic.edu/iiif/2/${picture.image_id}/full/200,/0/default.jpg`}
+                                alt={`${picture.thumbnail.alt_text}`}
+                              />
+                            }
                           />
-                          <h3>{el.title}</h3>
                         </div>
                       )
-                    : categories[index] === el.category_titles[0] && (
-                        <div key={i} className="accordion__picture-card">
-                          <img
-                            src={`https://www.artic.edu/iiif/2/${el.image_id}/full/200,/0/default.jpg`}
-                            alt={`${el.thumbnail.alt_text}`}
+                    : categories[index] === picture.category_titles[0] && (
+                        <div key={picture.id} className="accordion__picture-card">
+                          <IconLink
+                            to={`paintings/${picture.id}`}
+                            label={picture.title}
+                            icon={
+                              <img
+                                src={`https://www.artic.edu/iiif/2/${picture.image_id}/full/200,/0/default.jpg`}
+                                alt={`${picture.thumbnail.alt_text}`}
+                              />
+                            }
                           />
-                          <h3>{el.title}</h3>
                         </div>
                       );
                 })}
